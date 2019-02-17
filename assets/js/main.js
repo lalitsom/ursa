@@ -1,4 +1,4 @@
-var hostURL = "https://dynamic.xkcd.com/api-0/jsonp/comic/";
+var imgURL = "assets/images/";
 var timeline = document.getElementById('timeline_id');
 var currentComic = 0
 var activeCalls = 0;
@@ -27,36 +27,19 @@ function fetchNextComic(comicNumber = -1) {
   if (comicNumber == -1) {
     comicNumber = currentComic + 1 // if no comic is specified fetch the next one
   }
+  if(comicNumber>TOTAL_COMICS){
+    console.log(comicNumber);
+    return;
+  }
   currentComic = comicNumber
-  sendAJAXReq(hostURL + comicNumber, 3); // Max limit on Try again Request
+  extractDataFromJson(JSON_DATA[comicNumber]); // Max limit on Try again Request
 }
 
-function sendAJAXReq(json_url, maxTry) {
-  $.ajax({
-    url: json_url,
-    type: "GET",
-    dataType: 'jsonp', // Notice! JSONP <-- P (lowercase)
-    processData: true,
-    data: {},
-    headers: {
-      "Access-Control-Allow-Origin": "*",
-      "Access-Control-Allow-Headers": "origin, content-type, accept"
-    },
-    success: function(data) {
-      extractDataFromJson(data)
-      activeCalls -= 1;
-    },
-    error: function(error) {
-      if (maxTry > 0) { //Try again
-        setTimeout(sendAJAXReq, 3000, json_url, maxTry - 1)
-      }
-    }
-  });
-}
 
 function extractDataFromJson(data) {
+  console.log(data)
   newComic = {}
-  newComic.img = data.img
+  newComic.img = imgURL+data.img
   newComic.title = data.title
   newComic.num = data.num
   addToTimeliene(newComic)
@@ -68,7 +51,6 @@ function addToTimeliene(comic) {
 
 function createNode(comic) {
   newComicNode = $(document.getElementById('first_comic').cloneNode(true))
-  newComicNode.find(".comicURL")[0].href = "https://xkcd.com/" + comic.num
   newComicNode.find(".comicURL")[0].innerHTML = "#" + comic.num + ". " + comic.title;
   newComicNode.find(".comic_image")[0].src = comic.img
   newComicNode.find(".comic_image")[0].alt = comic.title
