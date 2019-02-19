@@ -15,20 +15,20 @@ function startScrollListener() {
     var contentHeight = timeline.offsetHeight;
     var yOffset = window.pageYOffset;
     var y = yOffset + window.innerHeight;
-    if (y >= contentHeight && activeCalls < 3) {
+    if (y >= contentHeight) {
       //load new content
-      activeCalls += 1
       fetchNextComic();
     }
   })
 }
 
 function fetchNextComic(comicNumber = -1) {
+
   if (comicNumber == -1) {
     comicNumber = currentComic + 1 // if no comic is specified fetch the next one
   }
+
   if(comicNumber>TOTAL_COMICS){
-    console.log(comicNumber);
     return;
   }
   currentComic = comicNumber

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>ursa</title>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.css" media="screen" title="no title">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.0/css/materialize.min.css" type="text/css" rel="stylesheet" media="screen,projection" />
+
+  <link rel="stylesheet" href="assets/css/main.css">
+  <link rel="stylesheet" href="assets/css/modalLightbox.css">
+  <script src="assets/js/data.js" charset="utf-8"></script>
+
+</head>
+
+<body class="red lighten-5">
+
+  <div class="navbar-fixed">
+    <nav>
+      <div class="nav-wrapper red darken-1">
+        <a href="https://github.com/lalitsom/ursa" target="_blank" class="brand-logo left">URSA</a>
+        <a class="waves-effect waves-light red darken-4 btn margin47">
+          <input style="padding-left: 4px;" type="number" min="0" max="3000"  id="comicSet" onblur="setcomic()" value="2">
+        </input></a>
+
+        <ul id="nav-mobile" class="right rightlogo">
+          <li><a href="#" target="_blank">URSA</a></li>
+        </ul>
+      </div>
+    </nav>
+    <br>
+  </div>
+
+
+  <div id="timeline_id" class="center timeline">
+
+    <div id="first_comic" class="comic_div center">
+      <br>
+      <div class="center img-info">
+        <p>
+          <a class="comicURL" href="#">#0. Pooh</a>
+        </p>
+      </div>
+      <img id="comicImg" onclick="addModel(this)" class="zoomLog responsive-img get_id comic_image"
+      src="assets/images/pooh_0.jpg" style="max-height:75vh;" alt="First comic">
+      <hr width="55%">
+    </div>
+
+  </div>
+
+  <div class=" load-center preloader-wrapper small active">
+    <div class="spinner-layer spinner-green-only">
+      <div class="circle-clipper left">
+        <div class="circle"></div>
+      </div>
+      <div class="gap-patch">
+        <div class="circle"></div>
+      </div>
+      <div class="circle-clipper right">
+        <div class="circle"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- The Modal -->
+  <div id="myModal" class="popupModal">
+    <!-- The Close Button -->
+    <span class="close">&times;</span>
+
+    <!-- Modal Caption (Image Text) -->
+    <div id="caption"></div>
+
+    <!-- Modal Content (The Image) -->
+    <!-- instead of finding the close span, hide the modal simply by clicking the image  -->
+    <img onclick="hideModal()" style="max-width:70vh;" class="modal-content" id="modalImg">
+
+  </div>
+
+
+  <!-- scripts -->
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+  <script src="assets/js/main.js" charset="utf-8"></script>
+  <script src="assets/js/modallightbox.js" charset="utf-8"></script>
+</body>
+
+</html>
