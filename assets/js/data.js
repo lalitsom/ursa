@@ -23,4 +23,4 @@ JSON_DATA = {
 
 }
 
-TOTAL_COMICS = 5;
+TOTAL_COMICS = Object.keys(JSON_DATA).length;
