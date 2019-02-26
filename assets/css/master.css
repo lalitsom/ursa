@@ -1,0 +1,41 @@
+body{
+  margin: 0;
+  padding: 0;
+  background-color: #f8f9fa;
+}
+
+.block_div{
+  padding: 10px;
+  border-style: ridge;
+  border-radius: 15px;
+  margin-top: 5px;
+
+  box-shadow: .3px .4px #888888;
+}
+
+#outer_div{
+  width: 60%;
+  margin-left: 20%
+}
+
+
+#head_div{
+
+    background-color: #3367d6;
+}
+
+
+#comic_div{
+
+}
+
+#comic_img{
+  max-width: 57%;
+  margin-left: 25%;
+
+}
+
+.controls{
+  margin: 10px;
+  margin-left: 30%
+}

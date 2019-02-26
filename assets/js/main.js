@@ -1,38 +1,21 @@
 var imgURL = "assets/images/";
-var timeline = document.getElementById('timeline_id');
 var currentComic = 0
-var activeCalls = 0;
 
 function init() {
-  startScrollListener();
-  fetchNextComic();
+  // currentComic = TOTAL_COMICS;
+  currentComic = 1;
+  fetchCurrentComic();
 }
 init();
 
-function startScrollListener() {
-  //detects when user reaches the end
-  window.addEventListener("scroll", function() {
-    var contentHeight = timeline.offsetHeight;
-    var yOffset = window.pageYOffset;
-    var y = yOffset + window.innerHeight;
-    if (y >= contentHeight) {
-      //load new content
-      fetchNextComic();
-    }
-  })
-}
 
-function fetchNextComic(comicNumber = -1) {
+function fetchCurrentComic(comicNum = 1) {
 
-  if (comicNumber == -1) {
-    comicNumber = currentComic + 1 // if no comic is specified fetch the next one
-  }
-
-  if(comicNumber>TOTAL_COMICS){
+  currentComic = comicNum
+  if(currentComic>TOTAL_COMICS){
     return;
   }
-  currentComic = comicNumber
-  extractDataFromJson(JSON_DATA[comicNumber]); // Max limit on Try again Request
+  extractDataFromJson(JSON_DATA[currentComic]); // Max limit on Try again Request
 }
 
 
@@ -42,27 +25,37 @@ function extractDataFromJson(data) {
   newComic.img = imgURL+data.img
   newComic.title = data.title
   newComic.num = data.num
-  addToTimeliene(newComic)
+  showComic(newComic)
 }
 
-function addToTimeliene(comic) {
-  createNode(comic).appendTo(".timeline");
+function showComic(comic) {
+  console.log(comic.img);
+  document.getElementById('comic_img').src = comic.img;
 }
 
-function createNode(comic) {
-  newComicNode = $(document.getElementById('first_comic').cloneNode(true))
-  newComicNode.find(".comicURL")[0].innerHTML = "#" + comic.num + ". " + comic.title;
-  newComicNode.find(".comic_image")[0].src = comic.img
-  newComicNode.find(".comic_image")[0].alt = comic.title
-  return newComicNode;
+
+
+function show_first(){
+    fetchCurrentComic(1);
 }
 
-function setcomic() {
-  comicSetElem = document.getElementById('comicSet');
-  _comicnumber = parseInt(comicSetElem.value);
-  if (isNaN(_comicnumber) || _comicnumber < 1 || _comicnumber > 9999) {
-    comicSetElem.value = currentComic;
-  } else {
-    currentComic = _comicnumber;
-  }
+function show_last(){
+    fetchCurrentComic(TOTAL_COMICS);
+}
+
+function show_next(){
+  fetchCurrentComic(currentComic+1)
+}
+
+
+function show_prev(){
+  fetchCurrentComic(currentComic-1)
+}
+
+
+function show_random(){
+
+  fetchCurrentComic(
+    Math.floor(Math.random() * Math.floor(TOTAL_COMICS-1))+1
+  );
 }

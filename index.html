@@ -1,91 +1,53 @@
 <!DOCTYPE html>
-<html>
+<html lang="en" dir="ltr">
+  <head>
+    <link rel="stylesheet" href="assets/css/master.css">
+    <script src="assets/js/data.js" charset="utf-8"></script>
 
-<head>
-  <meta charset="utf-8">
-  <title>ursa</title>
 
-  <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.css" media="screen" title="no title">
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.0/css/materialize.min.css" type="text/css" rel="stylesheet" media="screen,projection" />
+    <meta charset="utf-8">
+    <title>URSA</title>
+  </head>
+  <body>
+    <div id="outer_div">
+      <div id="head_div" class="block_div">
+        <h3>URSA - A series of webcomics of Maths, Sarcasm, Physics and Love.</h3>
+        <p>huh!... didn't you just copied xkcd.</p>
+        <p>No, I didn't. :P</p>
 
-  <link rel="stylesheet" href="assets/css/main.css">
-  <link rel="stylesheet" href="assets/css/modalLightbox.css">
-  <script src="assets/js/data.js" charset="utf-8"></script>
-
-</head>
-
-<body class="red lighten-5">
-
-  <div class="navbar-fixed">
-    <nav>
-      <div class="nav-wrapper red darken-1">
-        <a href="https://github.com/lalitsom/ursa" target="_blank" class="brand-logo left">URSA</a>
-        <a class="waves-effect waves-light red darken-4 btn margin47">
-          <input style="padding-left: 4px;" type="number" min="0" max="3000"  id="comicSet" onblur="setcomic()" value="2">
-        </input></a>
-
-        <ul id="nav-mobile" class="right rightlogo">
-          <li><a href="#" target="_blank">URSA</a></li>
-        </ul>
       </div>
-    </nav>
-    <br>
-  </div>
+      <div id="comic_div" class="block_div">
+        <div id="top_controls" class="controls">
 
+          <button type="button" name="button" onclick="show_first()">|<<-- </button>
+          <button type="button" name="button" onclick="show_prev()"><- Prev</button>
+          <button type="button" name="button" onclick="show_random()">Random</button>
+          <button type="button" name="button" onclick="show_next()">Next -></button>
+          <button type="button" name="button" onclick="show_last()">-->>|</button>
+        </div>
+        <div id="comic_image">
+          <img id="comic_img" src="assets/images/firstone_1.jpg" alt="">
+        </div>
+        <div id="bottom_controls" class="controls">
 
-  <div id="timeline_id" class="center timeline">
+          <button type="button" name="button" onclick="show_first()">|<<-- </button>
+          <button type="button" name="button" onclick="show_prev()"><- Prev</button>
+          <button type="button" name="button" onclick="show_random()">Random</button>
+          <button type="button" name="button" onclick="show_next()">Next -></button>
+          <button type="button" name="button" onclick="show_last()">-->>|</button>
 
-    <div id="first_comic" class="comic_div center">
-      <br>
-      <div class="center img-info">
-        <p>
-          <a class="comicURL" href="#">#0. Pooh</a>
-        </p>
+        </div>
       </div>
-      <img id="comicImg" onclick="addModel(this)" class="zoomLog responsive-img get_id comic_image"
-      src="assets/images/pooh_0.jpg" style="max-height:75vh;" alt="First comic">
-      <hr width="55%">
+      <div id="footer_div" class="block_div">
+        Copyrights 2019. LALIT SOM :P
+      </div>
+
+
     </div>
 
-  </div>
+<script src="assets/js/main.js" charset="utf-8"></script>
+  </body>
 
-  <div class=" load-center preloader-wrapper small active">
-    <div class="spinner-layer spinner-green-only">
-      <div class="circle-clipper left">
-        <div class="circle"></div>
-      </div>
-      <div class="gap-patch">
-        <div class="circle"></div>
-      </div>
-      <div class="circle-clipper right">
-        <div class="circle"></div>
-      </div>
-    </div>
-  </div>
-
-  <!-- The Modal -->
-  <div id="myModal" class="popupModal">
-    <!-- The Close Button -->
-    <span class="close">&times;</span>
-
-    <!-- Modal Caption (Image Text) -->
-    <div id="caption"></div>
-
-    <!-- Modal Content (The Image) -->
-    <!-- instead of finding the close span, hide the modal simply by clicking the image  -->
-    <img onclick="hideModal()" style="max-width:70vh;" class="modal-content" id="modalImg">
-
-  </div>
-
-
-  <!-- scripts -->
-
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
-  <script src="assets/js/main.js" charset="utf-8"></script>
-  <script src="assets/js/modallightbox.js" charset="utf-8"></script>
-</body>
 
 </html>
