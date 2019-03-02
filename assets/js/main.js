@@ -1,5 +1,12 @@
-var imgURL = "assets/images/";
+var comicImgURL = "assets/images/comics/";
+var scribblesImgURL = "assets/images/scribbles";
 var currentComic = 0
+var loadingImg = 'assets/images/load1.jpg'
+
+function showLoadingScreen(){
+  document.getElementById('img_elem').src = loadingImg;
+}
+
 
 function init() {
   // currentComic = TOTAL_COMICS;
@@ -15,25 +22,25 @@ function fetchCurrentComic(comicNum = 1) {
   if(currentComic>TOTAL_COMICS){
     return;
   }
-  extractDataFromJson(JSON_DATA[currentComic]); // Max limit on Try again Request
+  extractDataFromJson(COMIC_JSON[currentComic]); // Max limit on Try again Request
 }
 
 
 function extractDataFromJson(data) {
-  console.log(data)
   newComic = {}
-  newComic.img = imgURL+data.img
+  newComic.img = comicImgURL+data.img
   newComic.title = data.title
   newComic.num = data.num
+  newComic.transcript = data.transcript
   showComic(newComic)
 }
 
 function showComic(comic) {
-  console.log(comic.img);
-  document.getElementById('comic_img').src = comic.img;
+  document.getElementById('img_elem').src = comic.img;
+  document.getElementById('img_title').innerHTML = comic.num + ": " + comic.title;
+  document.getElementById('img_transcript').innerHTML = "[ "+comic.transcript+" ]";
+
 }
-
-
 
 function show_first(){
     fetchCurrentComic(1);
