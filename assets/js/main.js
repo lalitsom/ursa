@@ -32,10 +32,12 @@ function extractDataFromJson(data) {
   newComic.title = data.title
   newComic.num = data.num
   newComic.transcript = data.transcript
-  showComic(newComic)
+  setTimeout(showComic,10,newComic);
+  // showComic(newComic)
 }
 
 function showComic(comic) {
+
   document.getElementById('img_elem').src = comic.img;
   document.getElementById('img_title').innerHTML = comic.num + ": " + comic.title;
   document.getElementById('img_transcript').innerHTML = "[ "+comic.transcript+" ]";
