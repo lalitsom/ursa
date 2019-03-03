@@ -32,6 +32,7 @@ function extractDataFromJson(data) {
   newComic.title = data.title
   newComic.num = data.num
   newComic.transcript = data.transcript
+  showLoadingScreen();
   setTimeout(showComic,10,newComic);
   // showComic(newComic)
 }
