@@ -27,6 +27,10 @@ COMIC_JSON = {
     7:{
       num:7, title:"Infinte Cycles", img:"infinitecycles_7.jpg", alt: "Ceiling and infinity",
       transcript:"Loop without break;"
+    },
+    8:{
+      num:8, title:"Lost in thoughts", img:"lost_8.jpg", alt: "Sad Girl",
+      transcript:"Try turning it off and on again."
     }
 
 }
