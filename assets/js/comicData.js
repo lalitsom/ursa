@@ -13,7 +13,7 @@ COMIC_JSON = {
       transcript:"Walls can't talk."
     },
     4:{
-      num:4, title:"Task Manager", img:"taskmanager_4.jpg", alt: "CPU overloading",
+      num:4, title:"Task Manager: part-1", img:"taskmanager_4.jpg", alt: "CPU overloading",
       transcript:"she is worse than chrome."
     },
     5:{
