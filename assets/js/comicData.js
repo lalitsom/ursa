@@ -33,7 +33,7 @@ COMIC_JSON = {
       transcript:"Try turning it off and on again."
     },
     9:{
-      num:9, title:"Sisters", img:"sister_9.png", alt: "GodDamn",
+      num:9, title:"Sisters", img:"sisters_9.png", alt: "GodDamn",
       transcript:"Don't worry, I love u too."
     }
 
