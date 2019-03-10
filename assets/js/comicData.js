@@ -31,6 +31,10 @@ COMIC_JSON = {
     8:{
       num:8, title:"Lost in thoughts", img:"lost_8.jpg", alt: "Sad Girl",
       transcript:"Try turning it off and on again."
+    },
+    9:{
+      num:9, title:"Sisters", img:"sister_9.png", alt: "GodDamn",
+      transcript:"Don't worry, I love u too."
     }
 
 }
