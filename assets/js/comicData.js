@@ -35,6 +35,14 @@ COMIC_JSON = {
     9:{
       num:9, title:"Sisters", img:"sisters_9.png", alt: "GodDamn",
       transcript:"Don't worry, I love u too."
+    },
+    10:{
+      num:10, title:"Baseball Bats", img:"baseballbats_10.png", alt: "Sigh",
+      transcript:"Desperate Times Call for Desperate Mesaures."
+    },
+    11:{
+      num:11, title:"Changes", img:"batman_11.png", alt: "Blasphemy",
+      transcript:"Don't worry, It is just a phase."
     }
 
 }
