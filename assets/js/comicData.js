@@ -43,6 +43,10 @@ COMIC_JSON = {
     11:{
       num:11, title:"Confession", img:"batman_11.png", alt: "Blasphemy",
       transcript:"Don't worry, It's just a phase."
+    },
+    12:{
+      num:12, title:"Task Manager: part-2", img:"taskmanager2_12.png", alt: "Unauthorized users",
+      transcript:"Unauthorized Users."
     }
 
 }
