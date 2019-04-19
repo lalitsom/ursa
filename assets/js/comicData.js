@@ -41,8 +41,8 @@ COMIC_JSON = {
       transcript:"Desperate Times Call for Desperate Mesaures."
     },
     11:{
-      num:11, title:"Changes", img:"batman_11.png", alt: "Blasphemy",
-      transcript:"Don't worry, It is just a phase."
+      num:11, title:"Confession", img:"batman_11.png", alt: "Blasphemy",
+      transcript:"Don't worry, It's just a phase."
     }
 
 }
